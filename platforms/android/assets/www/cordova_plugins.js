@@ -15,6 +15,13 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/org.apache.cordova.statusbar/www/statusbar.js",
+        "id": "org.apache.cordova.statusbar.statusbar",
+        "clobbers": [
+            "window.StatusBar"
+        ]
+    },
+    {
         "file": "plugins/org.apache.cordova.file/www/DirectoryEntry.js",
         "id": "org.apache.cordova.file.DirectoryEntry",
         "clobbers": [
@@ -148,6 +155,7 @@ module.exports.metadata =
 // TOP OF METADATA
 {
     "org.apache.cordova.file-transfer": "0.4.4-dev",
+    "org.apache.cordova.statusbar": "0.1.10",
     "org.apache.cordova.file": "1.1.0"
 }
 // BOTTOM OF METADATA

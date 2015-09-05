@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" id="com.coolappz.Moby" version="0.0.1">
-    <name>Moby</name>
+    <name>Cool App</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
@@ -9,4 +9,8 @@
     </author>
     <content src="index.html"/>
     <access origin="*"/>
+
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#FFFFFF" />
+    <preference name="StatusBarStyle" value="default" />
 </widget>

@@ -1,63 +1,64 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+var AppRouter = Backbone.Router.extend({
+  routes: {
+    "home": "homeViewer",
+    "whatever": "whateverViewer",
+  },
 
-require.config({
-    baseUrl: 'js',
-    paths: {
-        // the left side is the module ID,
-        // the right side is the path to
-        // the jQuery file, relative to baseUrl.
-        // Also, the path should NOT include
-        // the '.js' file extension. This example
-        // is using jQuery 1.9.0 located at
-        // js/lib/jquery-1.9.0.js, relative to
-        // the HTML page.
-        jquery: 'jquery.min',
-        bootstrap:'bootstrap.min',
-        backbone:'backbone-min',
-        underscore:'underscore-min'
-    },
-    shim: {
-        'backbone': {
-            deps: ['underscore', 'jquery'],
-            exports: 'Backbone'
-        },
-        'underscore': {
-            exports: '_'
-        }
+  // ------------------------------------------------------
+  // ------------------------------------------------------
+
+  initialize: function () {
+    var self = this;
+    // ----------------------------------------------------HOME
+    //                                                         |-----> Model
+    //                                                         |-----> Collection
+    // this.homeCollection = new HomeCollection();
+    // this.homeCollection.fetch();
+    //                                                         |-----> View
+    this.homeView = new HomeView();
+    // ----------------------------------------------------WHATEVER
+    //                                                         |-----> Model
+    //                                                         |-----> Collection
+    //                                                         |-----> View
+    this.whateverView = new WhateverView();
+
+  }, // end of initlialize
+  // ------------------------------------------------------
+  /************************************************************************************
+                                    VIEW FUNCTIONS
+  ************************************************************************************/
+  /*renderViewIfLoggedIn:function(theView){
+    if (Parse.User.current()){
+      this.renderViewScroller(theView);
+    }else{
+      this.loginViewer();
     }
+
+  },*/
+  renderViewScroller:function(theView){
+    console.log('going to render a new view');
+    $('#app').html(theView.render().el);
+    //$('#mini-nav').html(this.miniNavView.render().el);
+    window.scrollTo(0,0); // scroll to the top
+  },
+  // ------------------------------------------------------ VIEWERS
+  homeViewer: function () {
+    console.log('going into the home view');
+    this.renderViewScroller(this.homeView);
+  },
+  whateverViewer: function () {
+    this.renderViewScroller(this.whateverView);
+  },
 });
+var myApp;
+function initializeMyApp(){
+  console.log('initialing my app');
+  myApp = new AppRouter();
+  Backbone.history.start();
+};
+document.addEventListener("deviceready", initializeMyApp, false);
+//var app = new AppRouter();
 
-require(['jquery','underscore','backbone'],function($,_,Backbone){
-    var HomeView=Backbone.View.extend({
-        template:_.template($("#homeTemplate").html()),
-        render:function(){
-            this.$el.append(this.template());
-        },
-        events:{
-            "click .download":'downloadSong'
-        },
-        downloadSong:function(event){
-            console.log("Download Song...");
-        }
-    });
-    
-    var Router=Backbone.Router.extend({
-        routes:{
-            "":"index",
-        },
-        index:function(){
-            var homeView=new HomeView({el:".container"});
-            homeView.render();
-        }
-    });
-    
-    var router=new Router();
-    Backbone.history.start();
-    
-});
-
-
+$(document).ready(function(){
+  console.log('document ready');
+}); // whatever we need to run here

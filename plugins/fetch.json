@@ -12,5 +12,13 @@
             "url": "https://git-wip-us.apache.org/repos/asf/cordova-plugin-file-transfer.git",
             "subdir": "."
         }
+    },
+    "org.apache.cordova.statusbar": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.statusbar"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }
