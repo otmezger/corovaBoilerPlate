@@ -1,0 +1,9 @@
+{
+  "name": "cordovaBoilerPlate",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-run": "^0.4.0",
+    "handlebars": "^4.0.2"
+  }
+}
