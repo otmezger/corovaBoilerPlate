@@ -9,6 +9,14 @@ var AppRouter = Backbone.Router.extend({
 
   initialize: function () {
     var self = this;
+    // ----------------------------------------------------Menu
+    //                                                         |-----> Model
+    //                                                         |-----> Collection
+    //                                                         |-----> View
+    this.menuView = new MenuView();
+    //this.menuView.render();
+        // the menu need to be renderd at once
+
     // ----------------------------------------------------HOME
     //                                                         |-----> Model
     //                                                         |-----> Collection
@@ -55,6 +63,7 @@ function initializeMyApp(){
   console.log('initialing my app');
   myApp = new AppRouter();
   Backbone.history.start();
+  myApp.menuView.setControls();
 };
 document.addEventListener("deviceready", initializeMyApp, false);
 //var app = new AppRouter();

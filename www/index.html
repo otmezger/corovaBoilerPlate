@@ -8,6 +8,7 @@
         <!-- External Libraries -->
         <!-- External Libraries === CSS -->
         <link href="./css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="./css/topcoat-desktop-light.min.css" rel="stylesheet"/>
         <!-- External Libraries === JS -->
         <script src="./js/lib/jquery-1.11.3.min.js"></script>
         <script src="./js/lib/underscore-min.js"></script>
@@ -26,13 +27,14 @@
         <!-- third: views -->
         <script type="text/javascript" src="./js/views/home.js"></script>
         <script type="text/javascript" src="./js/views/whatever.js"></script>
+        <script type="text/javascript" src="./js/views/menu.js"></script>
         <!--<script type="text/javascript" src="js/view/carViews.js"></script>-->
         <!-- fourth: app.js itself -->
         <script type="text/javascript" src="./js/app.js"></script>
 
     </head>
     <body>
-      <header>
+      <!--<header>
             <div class="logo" ></div>
             <div>
             <ul class="nav nav-tabs" id="top-menu">
@@ -40,11 +42,43 @@
                 <li id="whatever" ><a href="#/whatever">whatever</a></li>
             </ul>
             </div>
-        </header>
+        </header>-->
+        <div class="topcoat-navigation-bar">
+          <div class="topcoat-navigation-bar__item left quarter">
+            <a id="slide-menu-button" class="topcoat-icon-button--quiet slide-menu-button">
+              <span class="topcoat-icon topcoat-icon--menu-stack"></span>
+            </a>
+          </div>
+          <div class="topcoat-navigation-bar__item center half">
+            <h1 class="topcoat-navigation-bar__title">Topcoat Drawer</h1>
+          </div>
+          <div class="topcoat-navigation-bar__item right quarter">
+            <a class="topcoat-icon-button--quiet">
+              <span class="topcoat-icon topcoat-icon--edit"></span>
+            </a>
+          </div>
+        </div>
+        <nav class="side-nav">
+          <div class="topcoat-list__container side-nav__list__container">
+            <ul class="topcoat-list side-nav__list">
+              <li class="topcoat-list__item side-nav__list__item">
+                <a href="#" class="side-nav__button">Item</a>
+              </li>
+              <li class="topcoat-list__item side-nav__list__item is-active">
+                <a href="#" class="side-nav__button">Item</a>
+              </li>
+              <li class="topcoat-list__item side-nav__list__item">
+                <a href="#" class="side-nav__button">Item</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
         <!-- Main Container start -->
-        <div class="main-container">
+        <div class="main-container main-content">
             <div id="app"></div>
         </div>
+
         <!--<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
         <!--<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>-->
         <!--<script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>-->

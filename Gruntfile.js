@@ -17,6 +17,7 @@ module.exports = function(grunt) {
         args: [
           'home.handlebars',
           'whatever.handlebars',
+          'menu.handlebars',
           '-f',
           'templates.js',
         ]
@@ -39,7 +40,17 @@ module.exports = function(grunt) {
         cmd:'open',
         wait:true,
         args:['run_iOSSimulator_bin.app']
-      }
+      },
+      prepareBrowser:{
+        cmd:'cordova',
+        wait:true,
+        args:['prepare', 'browser']
+      },
+      runBrowser:{
+        cmd:'cordova',
+        wait:true,
+        args:['run', 'browser']
+      },
     },
   });
 
@@ -62,13 +73,19 @@ module.exports = function(grunt) {
     'run:compileHandleBars',
     'run:prepareIOS',
     'run:runIOS',
-    'run:dayDone',
+    'run:sayDone',
   ]);
   grunt.registerTask('iosDebug',[
     'run:compileHandleBars',
     'run:prepareIOS',
     'run:runIOS',
     'run:debugIOS',
+    'run:sayDone',
+  ]);
+  grunt.registerTask('browser',[
+    'run:compileHandleBars',
+    'run:prepareBrowser',
+    //'run:runBrowser',
     'run:sayDone',
   ]);
 };

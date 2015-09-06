@@ -10,7 +10,12 @@
     <content src="index.html"/>
     <access origin="*"/>
 
+
+    <!-- https://github.com/apache/cordova-plugin-statusbar -->
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#FFFFFF" />
     <preference name="StatusBarStyle" value="default" />
+    <!-- End of statusbar -->
+
+    
 </widget>
