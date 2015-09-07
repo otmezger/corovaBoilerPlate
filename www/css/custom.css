@@ -52,14 +52,18 @@ body.left-nav .topcoat-navigation-bar, body.left-nav .main-content {
     height:100%;
     padding: 1.25rem;
     box-sizing: border-box;
-    color: #999;
-    text-decoration:none;
+    color: #999 !important;
+    text-decoration:none !important;
 }
 .side-nav__button:hover {
     background-color:rgba(156, 170, 171, 0.48);
+    color: #999;
+    text-decoration:none;
 }
 .side-nav__button:active {
     background-color:rgba(156, 170, 171, 0.48);
+    color: #999 !important;
+    text-decoration:none !important;
 }
 .main-content {
     position: absolute;
