@@ -17,5 +17,6 @@
     <preference name="StatusBarStyle" value="default" />
     <!-- End of statusbar -->
 
-    
+    <preference name="android-minSdkVersion" value="16" />
+    <preference name="android-targetSdkVersion" value="16" />
 </widget>
