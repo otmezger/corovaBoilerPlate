@@ -1,4 +1,4 @@
-var HomeView = Backbone.View.extend({ //cool view is basically Backbone.View
+var HomeView = Backbone.View.extend({
   viewTitle: 'Home View',
   /*
   tagName: "",
@@ -19,6 +19,7 @@ var HomeView = Backbone.View.extend({ //cool view is basically Backbone.View
 
     this.unselectMenu();
     $("#home").addClass("is-active"); // add the active class
+    //myApp.mapView.render();
     return this;
   }
 

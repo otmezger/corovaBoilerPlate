@@ -90,3 +90,10 @@ body.left-nav .topcoat-navigation-bar, body.left-nav .main-content {
         width:auto;
     }
 }
+
+
+
+#map{
+  width:300px;
+  height: 300px;
+}
