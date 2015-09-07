@@ -46,8 +46,11 @@ var AppRouter = Backbone.Router.extend({
   renderViewScroller:function(theView){
     console.log('going to render a new view');
     $('#app').html(theView.render().el);
+    $('.topcoat-navigation-bar__title').html(theView.viewTitle);
     //$('#mini-nav').html(this.miniNavView.render().el);
     window.scrollTo(0,0); // scroll to the top
+    // then, we close the menu!
+    this.menuView.closeMenu();
   },
   // ------------------------------------------------------ VIEWERS
   homeViewer: function () {
@@ -64,6 +67,7 @@ function initializeMyApp(){
   myApp = new AppRouter();
   Backbone.history.start();
   myApp.menuView.setControls();
+  myApp.renderViewScroller(myApp.homeView); // default view.
 };
 document.addEventListener("deviceready", initializeMyApp, false);
 //var app = new AppRouter();

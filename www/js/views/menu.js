@@ -32,19 +32,33 @@ var MenuView = Backbone.View.extend({
     this.setControls();
   },
   setControls: function(){
+    var that = this;
     console.log("setting controls for slider menu");
     var slideMenuButton = document.getElementById('slide-menu-button');
     slideMenuButton.onclick = function (e) {
         var cl = document.body.classList;
         //var cl = document.getElementById('appSliderMenu').classList;
         if (cl.contains('left-nav')) {
-            cl.remove('left-nav');
-            $('.main-container').removeClass('left-nav');
+            that.closeMenu();
         } else {
-            cl.add('left-nav');
-            $('.main-container').addClass('left-nav');
+            that.openMenu();
         }
     };
+    /*var menuItemEntry = document.getElementsByClassName('side-nav__list__item');
+    menuItemEntry.onclick = function (e){
+      that.closeMenu();
+    };
+    */
+  },
+  openMenu: function(){
+    var cl = document.body.classList;
+    cl.add('left-nav');
+    $('.main-container').addClass('left-nav');
+  },
+  closeMenu: function(){
+    var cl = document.body.classList;
+    cl.remove('left-nav');
+    $('.main-container').removeClass('left-nav');
   }
 
 });
