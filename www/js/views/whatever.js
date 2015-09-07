@@ -18,7 +18,7 @@ var WhateverView = Backbone.View.extend({
     //$("header>div>ul.nav>li.active").removeClass("active"); // remove the active class
     //$("#whatever").addClass("active"); // add the active class
 
-    $('nav.side-nav>topcoat-list__container>topcoat-list>topcoat-list__item').removeClass('is-active');
+    this.unselectMenu();
     $("#whatever").addClass("is-active"); // add the active class
     return this;
   }

@@ -30,7 +30,7 @@ body.left-nav .topcoat-navigation-bar, body.left-nav .main-content {
     left:0;
     width:320px;
     height:100%;
-    background-color:#353535;
+    /*background-color:#353535;*/
 }
 .side-nav__list__container {
     margin-top:4rem;
@@ -44,7 +44,7 @@ body.left-nav .topcoat-navigation-bar, body.left-nav .main-content {
     padding:0;
 }
 .side-nav__list__item.is-active {
-    background-color:#353535;
+    background-color:rgba(156, 170, 171, 0.48);
 }
 .side-nav__button {
     display:block;
@@ -52,14 +52,14 @@ body.left-nav .topcoat-navigation-bar, body.left-nav .main-content {
     height:100%;
     padding: 1.25rem;
     box-sizing: border-box;
-    color: #c6c8c8;
+    color: #999;
     text-decoration:none;
 }
 .side-nav__button:hover {
-    background-color:#747474;
+    background-color:rgba(156, 170, 171, 0.48);
 }
 .side-nav__button:active {
-    background-color:#353535;
+    background-color:rgba(156, 170, 171, 0.48);
 }
 .main-content {
     position: absolute;

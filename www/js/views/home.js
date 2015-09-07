@@ -1,4 +1,4 @@
-var HomeView = Backbone.View.extend({
+var HomeView = Backbone.View.extend({ //cool view is basically Backbone.View
   viewTitle: 'Home View',
   /*
   tagName: "",
@@ -16,10 +16,8 @@ var HomeView = Backbone.View.extend({
   render: function() {
     console.log('in render of home');
     this.$el.html(Handlebars.templates.home());
-    //$("header>div>ul.nav>li.active").removeClass("active"); // remove the active class
-    $('nav.side-nav>topcoat-list__container>topcoat-list>topcoat-list__item').removeClass('is-active');
 
-    //$("#home").addClass("active"); // add the active class
+    this.unselectMenu();
     $("#home").addClass("is-active"); // add the active class
     return this;
   }
