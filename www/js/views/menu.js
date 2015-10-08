@@ -2,12 +2,11 @@ var MenuView = Backbone.View.extend({
   /*
   tagName: "",
   className: "",
-  events: {
-    "click .icon":          "open",
-    "click .button.edit":   "openEditDialog",
-    "click .button.delete": "destroy"
-  },
   */
+  events: {
+    "click .emailContact": "sendEmail",
+    //"click #slide-menu-button":
+  },
   initialize: function() {
     //this.listenTo(this.model, "change", this.render);
     _.bindAll(this, 'beforeRender', 'render', 'afterRender');
@@ -23,7 +22,7 @@ var MenuView = Backbone.View.extend({
   render: function() {
     console.log('in render of menu');
     this.$el.html(Handlebars.templates.menu());
-    $('#appSliderMenu').html(this.el);
+    $('.side-nav').html(this.el.children[0]);
     //this.setControls();
     return this;
   },
@@ -44,11 +43,10 @@ var MenuView = Backbone.View.extend({
             that.openMenu();
         }
     };
-    /*var menuItemEntry = document.getElementsByClassName('side-nav__list__item');
-    menuItemEntry.onclick = function (e){
-      that.closeMenu();
-    };
-    */
+    var emailContactMenuEntry = document.getElementsByClassName('emailContact')[0];
+    emailContactMenuEntry.onclick = function(){
+      that.sendEmail();
+    }
   },
   openMenu: function(){
     var cl = document.body.classList;
@@ -59,6 +57,16 @@ var MenuView = Backbone.View.extend({
     var cl = document.body.classList;
     cl.remove('left-nav');
     $('.main-container').removeClass('left-nav');
+  },
+
+  sendEmail: function(){
+      cordova.plugins.email.open({
+          to:      'max@mustermann.de',
+          cc:      'erika@mustermann.de',
+          bcc:     ['john@doe.com', 'jane@doe.com'],
+          subject: 'Greetings',
+          body:    'How are you? Nice greetings from Leipzig'
+      });
   }
 
 });
