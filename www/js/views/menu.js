@@ -34,19 +34,25 @@ var MenuView = Backbone.View.extend({
     var that = this;
     console.log("setting controls for slider menu");
     var slideMenuButton = document.getElementById('slide-menu-button');
-    slideMenuButton.onclick = function (e) {
-        var cl = document.body.classList;
-        //var cl = document.getElementById('appSliderMenu').classList;
-        if (cl.contains('left-nav')) {
-            that.closeMenu();
-        } else {
-            that.openMenu();
-        }
-    };
-    var emailContactMenuEntry = document.getElementsByClassName('emailContact')[0];
-    emailContactMenuEntry.onclick = function(){
-      that.sendEmail();
+    if (slideMenuButton){
+      slideMenuButton.onclick = function (e) {
+          var cl = document.body.classList;
+          //var cl = document.getElementById('appSliderMenu').classList;
+          if (cl.contains('left-nav')) {
+              that.closeMenu();
+          } else {
+              that.openMenu();
+          }
+      };
     }
+
+    var emailContactMenuEntry = document.getElementsByClassName('emailContact')[0];
+    if (emailContactMenuEntry){
+      emailContactMenuEntry.onclick = function(){
+        that.sendEmail();
+      };
+    }
+
   },
   openMenu: function(){
     var cl = document.body.classList;
