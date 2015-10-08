@@ -52,7 +52,7 @@ var AppRouter = Backbone.Router.extend({
 
   },*/
   renderViewScroller:function(theView){
-    console.log('going to render a new view');
+    //console.log('going to render a new view');
     $('#app').html(theView.render().el);
     $('.topcoat-navigation-bar__title').html(theView.viewTitle);
     //$('#mini-nav').html(this.miniNavView.render().el);
@@ -62,7 +62,7 @@ var AppRouter = Backbone.Router.extend({
   },
   // ------------------------------------------------------ VIEWERS
   homeViewer: function () {
-    console.log('going into the home view');
+    //console.log('going into the home view');
     this.renderViewScroller(this.homeView);
   },
   whateverViewer: function () {

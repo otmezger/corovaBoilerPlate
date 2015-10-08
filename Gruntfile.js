@@ -85,7 +85,7 @@ module.exports = function(grunt) {
   grunt.registerTask('browser',[
     'run:compileHandleBars',
     'run:prepareBrowser',
-    //'run:runBrowser',
+    'run:runBrowser',
     'run:sayDone',
   ]);
 };
