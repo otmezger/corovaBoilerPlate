@@ -43,12 +43,12 @@ var AppRouter = Backbone.Router.extend({
     //                                                         |-----> Model
     //                                                         |-----> Collection
     //                                                         |-----> View
-    this.newReportCategoryView = new NewReportCatogoryView();
+    this.newReportCategoryView = new NewReportCategoryView();
     // ----------------------------------------------------WHATEVER
     //                                                         |-----> Model
     //                                                         |-----> Collection
     //                                                         |-----> View
-    this.newReportDetailsView = new NewReportDetailView();
+    this.newReportDetailsView = new NewReportDetailsView();
     // ----------------------------------------------------WHATEVER
     //                                                         |-----> Model
     //                                                         |-----> Collection

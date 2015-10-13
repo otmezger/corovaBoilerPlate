@@ -1,4 +1,4 @@
-var WhateverView = Backbone.View.extend({
+var TutorialView = Backbone.View.extend({
   viewTitle: 'Tutorial',
   /*
   tagName: "",
