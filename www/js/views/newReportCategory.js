@@ -1,4 +1,4 @@
-var WhateverView = Backbone.View.extend({
+var NewReportCategryView = Backbone.View.extend({
   viewTitle: 'New Report Category',
   /*
   tagName: "",
