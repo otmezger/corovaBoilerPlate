@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" id="com.coolappz.Moby" version="0.0.1">
-    <name>Cool App</name>
+    <name>Yo Alcalde</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
@@ -10,7 +10,19 @@
     <content src="index.html"/>
     <access origin="*"/>
 
+	<platform name="android">
+  		<splash src="res/android/drawable-mdpi/background.png" qualifier="mdpi" />
+  		<splash src="res/android/drawable-hdpi/background.png" qualifier="hdpi" />
+  		<splash src="res/android/drawable-xhdpi/background.png" qualifier="xhdpi" />
+  		<splash src="res/android/drawable-xxhdpi/background.png" qualifier="xxhdpi" />
+  		<splash src="res/android/drawable-xxxhdpi/background.png" qualifier="xxxhdpi" />
+      <icon src="res/android/ldpi.png" density="ldpi" />
+      <icon src="res/android/mdpi.png" density="mdpi" />
+      <icon src="res/android/hdpi.png" density="hdpi" />
+      <icon src="res/android/xhdpi.png" density="xhdpi" />
 
+    </platform>
+    
     <!-- https://github.com/apache/cordova-plugin-statusbar -->
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#FFFFFF" />
