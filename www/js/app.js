@@ -19,7 +19,7 @@ var AppRouter = Backbone.Router.extend({
     //                                                         |-----> Collection
     //                                                         |-----> View
     this.menuView = new MenuView();
-    //this.menuView.render();
+    this.menuView.render();
         // the menu need to be renderd at once
 
     // ----------------------------------------------------HOME

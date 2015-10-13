@@ -1,4 +1,6 @@
 platforms
+node_modules
+plugins
 #################
 ## Eclipse
 #################

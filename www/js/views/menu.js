@@ -48,9 +48,12 @@ var MenuView = Backbone.View.extend({
 
     var emailContactMenuEntry = document.getElementsByClassName('emailContact')[0];
     if (emailContactMenuEntry){
+      console.log('succesfully created onclick for mail menu');
       emailContactMenuEntry.onclick = function(){
         that.sendEmail();
       };
+    }else{
+      console.log('cant create on click for email contact menu');
     }
 
   },
