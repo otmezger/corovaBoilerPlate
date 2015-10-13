@@ -1,7 +1,8 @@
 module.exports = function(grunt) {
   var HANDLEBARS_EXEC =  process.platform === 'win32' ?
                         'handlebars.cmd' : 'handlebars';//'./node_modules/handlebars/bin/handlebars';
-
+  var CORDOVA_EXEC = process.platform === 'win32' ?
+                        'cordova.cmd' : 'cordova';
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -87,24 +88,29 @@ module.exports = function(grunt) {
         args:['done']
       },
       prepareIOS:{
-        cmd:'cordova',
+        cmd:CORDOVA_EXEC,
         wait:true,
         args:['prepare', 'ios']
       },
       runIOS:{
-        cmd:'cordova',
+        cmd:CORDOVA_EXEC,
         wait:true,
         args:['run', 'ios']
       },
       prepareAndroid:{
-        cmd:'cordova.cmd',
+        cmd:CORDOVA_EXEC,
         wait:true,
         args:['prepare', 'android']
       },
       buildAndroid:{
-        cmd:'cordova.cmd',
+        cmd:CORDOVA_EXEC,
         wait:true,
         args:['build', 'android']
+      },
+      runAndroid:{
+        cmd:CORDOVA_EXEC,
+        wait:true,
+        args:['run', 'android', '--device']
       },
       debugIOS:{
         cmd:'open',
@@ -112,12 +118,12 @@ module.exports = function(grunt) {
         args:['run_iOSSimulator_bin.app']
       },
       prepareBrowser:{
-        cmd:'cordova',
+        cmd:CORDOVA_EXEC,
         wait:true,
         args:['prepare', 'browser']
       },
       runBrowser:{
-        cmd:'cordova',
+        cmd:CORDOVA_EXEC,
         wait:true,
         args:['run', 'browser']
       },
@@ -132,7 +138,7 @@ module.exports = function(grunt) {
   //grunt.loadNpmTasks('grunt-sftp-deploy');
   //grunt.loadNpmTasks('grunt-inject');
   grunt.loadNpmTasks('grunt-run');
-  grunt.loadNpmTasks('grunt-cordovacli');
+  //grunt.loadNpmTasks('grunt-cordovacli');
   //grunt.loadNpmTasks('grunt-contrib-clean');
 
   // Default task(s).
@@ -147,8 +153,14 @@ module.exports = function(grunt) {
   grunt.registerTask('android',[
     'run:compileHandleBars',
     'run:prepareAndroid',
+    //'run:buildAndroid',
+    'run:runAndroid'
+  ]);
+  grunt.registerTask('androidSim',[
+    'run:compileHandleBars',
+    'run:prepareAndroid',
     'run:buildAndroid'
-  ]);11
+  ]);
   grunt.registerTask('iosDebug',[
     'run:compileHandleBars',
     'run:prepareIOS',
