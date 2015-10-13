@@ -1,7 +1,12 @@
 var AppRouter = Backbone.Router.extend({
   routes: {
     "home": "homeViewer",
-    "whatever": "whateverViewer",
+    "help": "helpViewer",
+    "newReportMap": "newReportMapViewer",
+    "newReportCategory": "newReportCategoryViewer",
+    "newReportDetails": "newReportDetailsViewer",
+    "tutorial": "tutorialViewer",
+    "map" : "mapViewer"
   },
 
   // ------------------------------------------------------
@@ -28,7 +33,32 @@ var AppRouter = Backbone.Router.extend({
     //                                                         |-----> Model
     //                                                         |-----> Collection
     //                                                         |-----> View
-    this.whateverView = new WhateverView();
+    this.helpViewer = new HelpView();
+    // ----------------------------------------------------WHATEVER
+    //                                                         |-----> Model
+    //                                                         |-----> Collection
+    //                                                         |-----> View
+    this.newReportMap = new NewReportMapView();
+    // ----------------------------------------------------WHATEVER
+    //                                                         |-----> Model
+    //                                                         |-----> Collection
+    //                                                         |-----> View
+    this.newReportCategory = new NewReportCatogoryView();
+    // ----------------------------------------------------WHATEVER
+    //                                                         |-----> Model
+    //                                                         |-----> Collection
+    //                                                         |-----> View
+    this.newReportDetails = new NewReportDetailView();
+    // ----------------------------------------------------WHATEVER
+    //                                                         |-----> Model
+    //                                                         |-----> Collection
+    //                                                         |-----> View
+    this.tutorial = new TutorialView();
+    // ----------------------------------------------------WHATEVER
+    //                                                         |-----> Model
+    //                                                         |-----> Collection
+    //                                                         |-----> View
+    this.map = new MapView();
 
   }, // end of initlialize
   // ------------------------------------------------------
@@ -57,9 +87,24 @@ var AppRouter = Backbone.Router.extend({
     console.log('going into the home view');
     this.renderViewScroller(this.homeView);
   },
-  whateverViewer: function () {
-    this.renderViewScroller(this.whateverView);
+  helpViewer: function () {
+    this.renderViewScroller(this.helpViewer);
   },
+  newReportMapViewer: function () {
+    this.renderViewScroller(this.newReportMapViewer);
+  },
+  newReportCategoryViewer: function () {
+    this.renderViewScroller(this.newReportCategoryViewer);
+  },
+  newReportDetailsViewer: function () {
+    this.renderViewScroller(this.newReportDetailsViewer);
+  },
+  tutorialViewer: function () {
+    this.renderViewScroller(this.tutorialViewer);
+  },
+  mapViewer: function () {
+    this.renderViewScroller(this.mapViewer);
+  }
 });
 var myApp;
 function initializeMyApp(){
