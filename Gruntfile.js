@@ -71,16 +71,17 @@ module.exports = function(grunt) {
         args: [
           'home.handlebars',
           'menu.handlebars',
-		  'help.handlebars',
-		  'newReportMap.handlebars',
-		  'newReportCategory.handlebars',
-		  'newReportDetails.handlebars',
-		  'tutorial.handlebars',
+    		  'help.handlebars',
+    		  'newReportMap.handlebars',
+    		  'newReportCategory.handlebars',
+    		  'newReportDetails.handlebars',
+    		  'tutorial.handlebars',
+          'map.handlebars',
           '-f',
           'templates.js',
         ]
       },
-	  
+
       sayDone:{
         cmd:'say',
         args:['done']
