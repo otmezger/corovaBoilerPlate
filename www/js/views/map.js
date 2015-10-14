@@ -47,16 +47,14 @@ var MapView = Backbone.View.extend({
     return a.resolve();
   },
   makeMapGoogle: function(){
-    var map;
-    document.addEventListener("deviceready", function() {
-      var div = document.getElementById("mapCanvas");
+    //this.map;
+    var div = document.getElementById("mapCanvas");
 
-      // Initialize the map view
-      map = plugin.google.maps.Map.getMap(div);
+    // Initialize the map view
+    this.map = plugin.google.maps.Map.getMap(div);
 
-      // Wait until the map is ready status.
-      //map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);
-    }, false);
+    // Wait until the map is ready status.
+    //map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);
   },
   makeMapMapBox_deprecated: function(){
     /*this.map = L.map('mapCanvas').setView([51.505, -0.09], 13);
