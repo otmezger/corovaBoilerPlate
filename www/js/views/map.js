@@ -24,7 +24,6 @@ var MapView = Backbone.View.extend({
     });
   },
   beforeRender: function(){
-    console.log('on before render for map');
     a = new $.Deferred()
     return a.resolve();
   },
@@ -41,20 +40,32 @@ var MapView = Backbone.View.extend({
     console.log('on AFTER render for map');
     var that = this;
     setTimeout(function () {
-      that.makeMap();
+      that.makeMapGoogle();
     }, 1000);
     //this.makeMap();
     a = new $.Deferred()
     return a.resolve();
   },
+  makeMapGoogle: function(){
+    var map;
+    document.addEventListener("deviceready", function() {
+      var div = document.getElementById("mapCanvas");
+
+      // Initialize the map view
+      map = plugin.google.maps.Map.getMap(div);
+
+      // Wait until the map is ready status.
+      //map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);
+    }, false);
+  },
   makeMapMapBox_deprecated: function(){
-    this.map = L.map('mapCanvas').setView([51.505, -0.09], 13);
+    /*this.map = L.map('mapCanvas').setView([51.505, -0.09], 13);
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/256/{z}/{x}/{y}.png?access_token={accessToken}', {
       attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
       id: 'otmezger.7916b706/997',
       accessToken: 'pk.eyJ1Ijoib3RtZXpnZXIiLCJhIjoiYmE2OWZmNzBjZTVkZTQ3ODczMjE5N2I1NmZkMmYyNDkifQ.IydOg1-YXjs817nryXUP3Q',
       maxZoom: 18
-    }).addTo(this.map);
+    }).addTo(this.map);*/
     //this.map.locate({setView: true, maxZoom: 16});
     //this.map.on('locationfound', onLocationFound);
   },
