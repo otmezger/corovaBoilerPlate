@@ -139,6 +139,8 @@ body.left-nav .topcoat-navigation-bar, body.left-nav .main-content {
 .reportCategoryButton-Text>div>p{
     text-align:center;
     margin-bottom: 0px !important;
+    padding-left:1rem;
+    padding-right:1rem;
 }
 
 

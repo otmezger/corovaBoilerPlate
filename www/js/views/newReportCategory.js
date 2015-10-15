@@ -3,12 +3,11 @@ var NewReportCategoryView = Backbone.View.extend({
   /*
   tagName: "",
   className: "",
-  events: {
-    "click .icon":          "open",
-    "click .button.edit":   "openEditDialog",
-    "click .button.delete": "destroy"
-  },
   */
+  events: {
+    "click .cancelButton-Text":          "continueToNextScreen",
+  },
+
   initialize: function() {
     //this.listenTo(this.model, "change", this.render);
   },
@@ -21,6 +20,9 @@ var NewReportCategoryView = Backbone.View.extend({
     this.unselectMenu();
     $("#newReportCategory").addClass("is-active"); // add the active class
     return this;
+  },
+  continueToNextScreen: function(){
+    console.log('bla');
   }
 
 });

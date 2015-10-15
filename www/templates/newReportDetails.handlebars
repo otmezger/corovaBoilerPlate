@@ -3,22 +3,12 @@
         <h1>Enviar reporte</h1>
 </div>
 <div data-role="content">
-        <% var photoClass = 'nodisplay', nophotoClass = 'nodisplay';
-        if ( file != '' ) {
-            photoClass = '';
-        } else {
-            nophotoClass = '';
-        } %>
     <div class="photo-wrapper">
     <div>
 		<div class="gmailstyletest">
 			<div>
 				<label for="form_title">Asunto</label>
 				<input data-role="none" type="text" name="title" id="form_title" placeholder="Titulo del reporte" value="<%= title %>" required>
-			</div>
-
-			<div>
-				<%= categories %>
 			</div>
 
 			<div class="noborder">
