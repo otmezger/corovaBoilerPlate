@@ -94,6 +94,8 @@ var AppRouter = Backbone.Router.extend({
     this.renderViewScroller(this.newReportMapView);
   },
   newReportCategoryViewer: function () {
+    //this.newReportCategoryView.render();
+    //$("#reportViewInMap").html(this.el);
     this.renderViewScroller(this.newReportCategoryView);
   },
   newReportDetailsViewer: function () {

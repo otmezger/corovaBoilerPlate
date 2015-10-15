@@ -15,11 +15,12 @@ var NewReportMapView = Backbone.View.extend({
 
   render: function() {
     this.$el.html(Handlebars.templates.newReportMap());
-    //$("header>div>ul.nav>li.active").removeClass("active"); // remove the active class
-    //$("#whatever").addClass("active"); // add the active class
 
     this.unselectMenu();
     $("#newReportMap").addClass("is-active"); // add the active class
+
+    
+    //$('#reportViewInMap').html(myApp.newReportCategoryView.el)
     return this;
   }
 
