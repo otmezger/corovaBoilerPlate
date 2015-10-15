@@ -1,23 +1,11 @@
 <div class="topcoat-grid details-grid">
   <div class="topcoat-grid__row">
-    <div class="topcoat-grid__column--12 titleDetails">
-        Enviar reporte
-    </div>
-  </div>
-
-  <div class="topcoat-grid__row">
-    <div class="topcoat-grid__column--10">
+    <div class="topcoat-grid__column--10 topcoat-grid__offset--1">
       <div class="reportDetailsForm">
-        <div class="reportDetailsForm-Text" >
-          <div>
-            <p>
-              Asunto<br>
-            </p>
-          </div>
-        </div>
         <div class="reportDetailsForm-TextInput" >
           <div>
             {{#if reportModel.attributes.categoryModel.attributes.validID}}
+            <i class="icon {{reportModel.attributes.categoryModel.attributes.categoryIcon}}" style='color:{{reportModel.attributes.categoryModel.attributes.categoryColor}}'></i>
             {{reportModel.attributes.categoryModel.attributes.categoryName}}
             {{else}}
             <input data-role="none" type="text" name="title" id="reportTitle" placeholder="Titulo del reporte" value="" required>
@@ -27,59 +15,33 @@
       </div>
     </div> <!-- end of column -->
   </div> <!-- end of row -->
+  <hr class='separator'>
+
   <div class="topcoat-grid__row">
-    <div class="topcoat-grid__column--12">
+    <div class="topcoat-grid__column--10 topcoat-grid__offset--1">
       <div class="reportDetailsForm">
-        <div class="reportDetailsForm-Text" >
-          <div>
-            <p>
-              Descripción
-          	</p>
-          </div>
-        </div>
         <div class="reportDetailsForm-TextInput" >
-          <div>
-            <p>
-              <textarea class="reportDetails" data-role="none" name="details" id="reportDetails" placeholder="Detalles del problema. Por favor sea lo más explicito posible." required></textarea>
-          	</p>
-          </div>
+          <textarea class="reportDetails" data-role="none" name="details" id="reportDetails" placeholder="Detalles del problema. Por favor sea lo más explicito posible." required></textarea>
         </div>
       </div>
     </div> <!-- end of column -->
   </div> <!-- end of row -->
+  <hr class='separator'>
+
+
   <div class="topcoat-grid__row">
-    <div class="topcoat-grid__column--3">
-      <div class="icon">
-        <div class="icon" >
-          <div>
-              <i class="icon ion-camera" ></i>
+    <div class="topcoat-grid__column--10  topcoat-grid__offset--1">
+      <div class="topcoat-grid__row photosRow">
+        <div class="topcoat-grid__column--3">
+          <div class="photoContainer newPhoto">
+            <p ><i class="icon ion-camera"></i></p>
           </div>
-        </div>
-      </div>
-    </div> <!-- end of column -->
-    <div class="topcoat-grid__column--9">
-      <div class="photoButtons">
-        <div class="photoButtons-Text" >
-          <div>
-            <p>
-              Seleccionar foto
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="photoButtons">
-        <div class="photoButtons-Text" >
-          <div>
-            <p>
-              Tomar foto
-            <p>
-          </div>
-        </div>
-      </div>
-    </div> <!-- end of column -->
+        </div> <!-- end of column -->
+      </div> <!-- end of row -->
+    </div>
   </div> <!-- end of row -->
   <div class="topcoat-grid__row">
-    <div class="topcoat-grid__column--12">
+    <div class="topcoat-grid__column--10 topcoat-grid__offset--1">
       <div class="submitButton">
         <div class="submitButton-Text" >
           <div>
