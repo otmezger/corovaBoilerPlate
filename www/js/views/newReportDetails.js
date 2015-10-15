@@ -18,11 +18,21 @@ var NewReportDetailsView = Backbone.View.extend({
 
     this.unselectMenu();
     var that = this;
+
+    this.miniatureViews = [];
+
+    this.miniatureViews.push(new PictureMiniatureView());
+
+
     setTimeout(function(){
+      that.miniatureViews[0].render();
       that.adjustHeights();
     },200);
     this.delegateEvents();
     $("#newReportDetails").addClass("is-active"); // add the active class
+
+
+
     return this;
   },
   adjustHeights:function(){
@@ -31,9 +41,27 @@ var NewReportDetailsView = Backbone.View.extend({
     $('.photoContainer>p').css({'line-height':width+'px'});
   },
   uploadPicture:function(){
-    $('.photosRow').prepend('<div class="topcoat-grid__column--3"><div class="photoContainer photoTemp"></div></div> <!-- end of column -->');
+    this.miniatureViews.push(new PictureMiniatureView());
+    var picIndex =  this.miniatureViews.length-1;// the last added picture.
+    this.miniatureViews[picIndex].pictureModel = new PictureModel();
+    this.miniatureViews[picIndex].render();
+
     this.adjustHeights();
 
   }
 
+});
+
+
+var PictureMiniatureView = Backbone.View.extend({
+  initialize: function() {
+    //this.listenTo(this.model, "change", this.render);
+  },
+  render: function() {
+    this.$el.html(Handlebars.templates.pictureMiniatureView(this));
+    $('.photosRow').prepend(this.el.childNodes);
+    //$('.photosRow').prepend('<div class="topcoat-grid__column--3"><div class="photoContainer photoTemp"></div></div> <!-- end of column -->');
+
+    return this;
+  }
 });

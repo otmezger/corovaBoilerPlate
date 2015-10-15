@@ -245,10 +245,19 @@ body.left-nav .topcoat-navigation-bar, body.left-nav .main-content {
 }
 .photoContainer{
   width:100%;
-  border: 1px dashed #A5A5A5;
+  border: 0px solid #black;
   border-radius: 4px;
   display:flex;
   justify-content:center;
+  margin-top:20px;
+}
+.photoContainer.newPhoto{
+  border: 1px dashed #A5A5A5;
+  background-color: white;
+  color:#A5A5A5;
+}
+.photoContainer.tmpPhoto{
+  background-color: red;
 }
 .photoContainer>p{
   width:100%;
@@ -262,9 +271,7 @@ body.left-nav .topcoat-navigation-bar, body.left-nav .main-content {
   padding:0px;
 
 }
-.photoTemp{
-  color:red;
-}
+
 /*
 ####################################   END  of   newReportCategoryView
 */

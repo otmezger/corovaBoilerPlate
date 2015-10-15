@@ -22,6 +22,7 @@ module.exports = function(grunt) {
     		  'newReportCategory.handlebars',
     		  'newReportDetails.handlebars',
     		  'tutorial.handlebars',
+          'pictureMiniatureView.handlebars',
           'map.handlebars',
           '-f',
           'templates.js',

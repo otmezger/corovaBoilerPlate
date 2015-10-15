@@ -1,18 +1,10 @@
-Handlebars.registerHelper('checkIfValidCategoryModel', function(categoryModel) {
-  var out = false;
+Handlebars.registerHelper('getMiniaturePictureClass', function(pictureModel) {
+  var out;
 
-  if (categoryModel) {
-    if (categoryModel.attributes){
-      if (categoryModel.attributes.categoryID){
-        if (categoryModel.attributes.categoryID == 'Z-1'){
-          // not a "valid report ID"
-          out = false
-        } else{
-          out = true;
-        }
-
-      }
-    }
+  if (pictureModel) {
+    out = 'tmpPhoto';
+  }else{
+    out = 'newPhoto'
   }
   return out;
 });
