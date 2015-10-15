@@ -29,21 +29,24 @@ var AppRouter = Backbone.Router.extend({
     // this.homeCollection.fetch();
     //                                                         |-----> View
     this.homeView = new HomeView();
-    // ----------------------------------------------------WHATEVER
+    // ----------------------------------------------------Help
     //                                                         |-----> Model
     //                                                         |-----> Collection
     //                                                         |-----> View
     this.helpView = new HelpView();
-    // ----------------------------------------------------WHATEVER
+    // ----------------------------------------------------NewReportMap
     //                                                         |-----> Model
     //                                                         |-----> Collection
     //                                                         |-----> View
     this.newReportMapView = new NewReportMapView();
-    // ----------------------------------------------------WHATEVER
+    // ----------------------------------------------------NewReportCategory
     //                                                         |-----> Model
     //                                                         |-----> Collection
+    this.reportCategoryCollection = new ReportCategoryCollection;
+    this.reportCategoryCollection.populateManual();
     //                                                         |-----> View
     this.newReportCategoryView = new NewReportCategoryView();
+    this.newReportCategoryView.reportCategoryCollection = this.reportCategoryCollection;
     // ----------------------------------------------------WHATEVER
     //                                                         |-----> Model
     //                                                         |-----> Collection

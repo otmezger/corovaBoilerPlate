@@ -5,7 +5,8 @@ var NewReportCategoryView = Backbone.View.extend({
   className: "",
   */
   events: {
-    "click .cancelButton-Text":          "continueToNextScreen",
+    "click .cancelButton":          "cancelAction",
+    "click .reportCategoryButton":          "continueWithNextScreen",
   },
 
   initialize: function() {
@@ -13,7 +14,7 @@ var NewReportCategoryView = Backbone.View.extend({
   },
 
   render: function() {
-    this.$el.html(Handlebars.templates.newReportCategory());
+    this.$el.html(Handlebars.templates.newReportCategory(this));
     //$("header>div>ul.nav>li.active").removeClass("active"); // remove the active class
     //$("#whatever").addClass("active"); // add the active class
 
@@ -21,8 +22,14 @@ var NewReportCategoryView = Backbone.View.extend({
     $("#newReportCategory").addClass("is-active"); // add the active class
     return this;
   },
-  continueToNextScreen: function(){
+  cancelAction: function(){
     console.log('bla');
-  }
+  },
+  continueWithNextScreen: function(e){
+    var $el = $(e.currentTarget);
+    var categoryID = $el.attr('categoryID');
+    console.log(categoryID);
+  },
+
 
 });

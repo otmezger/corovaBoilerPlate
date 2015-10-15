@@ -6,79 +6,21 @@
     </div>
 
     <div class="topcoat-grid__row">
+      {{#each reportCategoryCollection.models}}
       <div class="topcoat-grid__column--4">
-        <div class="reportCategoryButton" style="background-color:#F0B92D;">
+        <div class="reportCategoryButton" categoryID='{{attributes.categoryID}}' style="background-color:{{attributes.categoryColor}};">
           <div class="reportCategoryButton-Text" >
             <div>
               <p>
-                <i class="icon ion-android-radio-button-on" style="font-size: 350%;"></i><br>
-                Hueco en<br>la via
+                <i class="icon {{attributes.categoryIcon}}" style="font-size: 350%;"></i><br>
+                {{attributes.categoryName}}
               </p>
             </div>
           </div>
         </div>
       </div> <!-- end of column -->
-      <div class="topcoat-grid__column--4">
-        <div class="reportCategoryButton" style="background-color:#F26077;">
-          <div class="reportCategoryButton-Text" >
-            <div>
-              <p>
-                <i class="icon ion-ios-minus" style="font-size: 350%;"></i><br>
-                Acera bloqueada
-              </p>
-            </div>
-          </div>
-        </div>
-      </div> <!-- end of column -->
-      <div class="topcoat-grid__column--4">
-        <div class="reportCategoryButton" style="background-color:#198EC2;">
-          <div class="reportCategoryButton-Text" >
-            <div>
-              <p>
-                <i class="icon ion-waterdrop" style="font-size: 350%;"></i><br>
-                Daño de Agua
-              </p>
-            </div>
-          </div>
-        </div>
-      </div> <!-- end of column -->
+      {{/each}}
 
-      <div class="topcoat-grid__column--4">
-        <div class="reportCategoryButton" style="background-color:#68BC36;">
-          <div class="reportCategoryButton-Text" >
-            <div>
-              <p>
-                <i class="icon ion-leaf" style="font-size: 350%;"></i><br>
-                Lotes Vacios
-              </p>
-            </div>
-          </div>
-        </div>
-      </div> <!-- end of column -->
-      <div class="topcoat-grid__column--4">
-        <div class="reportCategoryButton" style="background-color:#9662D0;">
-          <div class="reportCategoryButton-Text" >
-            <div>
-              <p>
-                <i class="icon ion-ios-trash" style="font-size: 350%;"></i><br>
-                Basura
-              </p>
-            </div>
-          </div>
-        </div>
-      </div> <!-- end of column -->
-      <div class="topcoat-grid__column--4">
-        <div class="reportCategoryButton" style="background-color:#A5A5A5;">
-          <div class="reportCategoryButton-Text" >
-            <div>
-              <p>
-                <i class="icon ion-ios-help" style="font-size: 350%;"></i><br>
-                Otra
-              </p>
-            </div>
-          </div>
-        </div>
-      </div> <!-- end of column -->
     </div><!-- end of row -->
 </div> <!-- end of category-grid -->
 
