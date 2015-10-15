@@ -23,12 +23,14 @@ var NewReportCategoryView = Backbone.View.extend({
     return this;
   },
   cancelAction: function(){
-    console.log('bla');
+    myApp.homeViewer();
   },
   continueWithNextScreen: function(e){
     var $el = $(e.currentTarget);
     var categoryID = $el.attr('categoryID');
     console.log(categoryID);
+    this.reportModel.set('categoryModel',this.reportCategoryCollection.getReportCategoryByCategoryID(categoryID));
+    myApp.newReportDetailsViewer();
   },
 
 

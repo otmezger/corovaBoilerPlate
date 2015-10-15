@@ -55,5 +55,15 @@ var ReportCategoryCollection = Backbone.Collection.extend({
     newCategoryModel.set('categoryIcon','ion-ios-help');
     newCategoryModel.set('categoryName','Otra');
     this.add(newCategoryModel);
+  },
+  getReportCategoryByCategoryID: function(categoryID){
+    var returnModel = null;
+    _.each(this.models,function(thisModel){
+      if (thisModel.attributes.categoryID == categoryID){
+        returnModel = thisModel;
+      }
+    });
+    return returnModel;
   }
+
 });

@@ -34,6 +34,11 @@ var AppRouter = Backbone.Router.extend({
     //                                                         |-----> Collection
     //                                                         |-----> View
     this.helpView = new HelpView();
+    // ----------------------------------------------------Report Model
+    //                                                         |-----> Model
+    this.reportModel = new ReportModel();
+    //                                                         |-----> Collection
+    //                                                         |-----> View
     // ----------------------------------------------------NewReportMap
     //                                                         |-----> Model
     //                                                         |-----> Collection
@@ -47,11 +52,13 @@ var AppRouter = Backbone.Router.extend({
     //                                                         |-----> View
     this.newReportCategoryView = new NewReportCategoryView();
     this.newReportCategoryView.reportCategoryCollection = this.reportCategoryCollection;
-    // ----------------------------------------------------WHATEVER
+    this.newReportCategoryView.reportModel = this.reportModel;
+    // ----------------------------------------------------Report Model
     //                                                         |-----> Model
     //                                                         |-----> Collection
     //                                                         |-----> View
     this.newReportDetailsView = new NewReportDetailsView();
+    this.newReportDetailsView.reportModel = this.reportModel;
     // ----------------------------------------------------WHATEVER
     //                                                         |-----> Model
     //                                                         |-----> Collection
