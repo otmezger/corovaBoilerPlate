@@ -1,35 +1,72 @@
-<div data-role="header">
-        <!--<a id="photo-next-btn" data-icon="arrow-r" data-iconpos="right" class="ui-btn-right">Omitir foto</a>-->
-        <h1>Enviar reporte</h1>
-</div>
-<div data-role="content">
-    <div class="photo-wrapper">
-    <div>
-		<div class="gmailstyletest">
-			<div>
-				<label for="form_title">Asunto</label>
-				<input data-role="none" type="text" name="title" id="form_title" placeholder="Titulo del reporte" value="<%= title %>" required>
-			</div>
+<div class="topcoat-grid details-grid">
+  <div class="topcoat-grid__row">
+    <div class="topcoat-grid__column--12 titleDetails">
+        Enviar reporte
+    </div>
+  </div>
 
-			<div class="noborder">
-				<label for="form_detail">Descripción</label>
-				<textarea data-role="none" name="detail" id="form_detail" placeholder="Detalles del problema. Por favor sea lo más explicito posible." required><%= details %></textarea>
-			</div>
-		</div>
-	</div>
-	<div class="photo">
-    <div id='photo-container'></div>
-	<div class="photo-btn">
-		<input data-icon="fms-photo-existing" type="button" id="id_existing" data-theme="c" value="Seleccionar foto" >
-		<input data-icon="fms-photo-new" id="id_photo_button" type="button" data-theme="c" value="Tomar foto">
-    </div>
-	<a data-role="none" id="id_del_photo_button" class="photo-corner-button">X</a>
-    </div>
-    <div class="send">
-	<input id="id_send_report_button" type="button" data-theme="a" value="Enviar reporte">
-	</div>
-	</div>
-    <div class="bottom-btn">
-
-    </div>
+  <div class="topcoat-grid__row">
+    <div class="topcoat-grid__column--10">
+      <div class="reportDetailsForm">
+        <div class="reportDetailsForm-Label" >
+          <div>
+            <p>
+              Asunto<br>
+              <input data-role="none" type="text" name="title" id="reportTitle" placeholder="Titulo del reporte" value="" required>
+      			</p>
+          </div>
+        </div>
+      </div>
+    </div> <!-- end of column -->
+  </div> <!-- end of row -->
+  <div class="topcoat-grid__row">
+    <div class="topcoat-grid__column--10">
+      <div class="reportDetailsForm">
+        <div class="reportDetailsForm-Label" >
+          <div>
+            <p>
+              Descripción<br>
+              <textarea data-role="none" name="detail" id="reportDetail" placeholder="Detalles del problema. Por favor sea lo más explicito posible." required></textarea>
+      			</p>
+          </div>
+        </div>
+      </div>
+    </div> <!-- end of column -->
+  </div> <!-- end of row -->
+  <div class="topcoat-grid__row">
+    <div class="topcoat-grid__column--3">
+      <div class="reportDetailsForm">
+        <div class="reportDetailsForm-Label" >
+          <div>
+              <i class="icon ion-camera" ></i>
+          </div>
+        </div>
+      </div>
+    </div> <!-- end of column -->
+    <div class="topcoat-grid__column--9">
+      <div class="reportDetailsForm">
+        <div class="reportDetailsForm-Label" >
+          <div>
+            <input class="reportDetailsButton" id="galleryButton" type="button" value="Seleccionar foto" ><br>
+            <input class="reportDetailsButton" id="cameraButton" type="button" value="Tomar foto">
+          </div>
+        </div>
+      </div>
+    </div> <!-- end of column -->
+  </div> <!-- end of row -->
+  <div class="topcoat-grid__row">
+    <div class="topcoat-grid__column--12">
+      <div class="reportDetailsForm">
+        <div class="reportDetailsForm-Label" >
+          <div>
+            <p>
+              <input class="sendButton" id="sendReportButton" type="button" data-theme="a" value="Enviar reporte">
+      			</p>
+          </div>
+        </div>
+      </div>
+    </div> <!-- end of column -->
+  </div> <!-- end of row -->
 </div>
+  	<!--<a data-role="none" id="id_del_photo_button" class="photo-corner-button">X</a>
+  	-->
