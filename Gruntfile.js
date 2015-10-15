@@ -6,62 +6,7 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-
-	cordovacli: {
-		options: {
-			cli: 'cordova'  // cca or cordova
-		},
-		cordova: {
-			options: {
-				command: ['create','platform','plugin','build','prepare'],
-				platforms: ['ios','android'],
-				plugins: ['device','dialogs'],
-				path: 'myHybridAppFolder',
-				id: 'io.cordova.hellocordova',
-				name: 'HelloCordova'
-			}
-		},
-		create: {
-			options: {
-				command: 'create',
-				id: 'com.myHybridApp',
-				name: 'myHybridApp'
-			}
-		},
-		add_platforms: {
-			options: {
-				command: 'platform',
-				action: 'add',
-				platforms: ['ios', 'android']
-			}
-		},
-		prepare: {
-			options: {
-				command: 'prepare',
-				platforms: ['android']
-			}
-		},
-		build_ios: {
-			options: {
-				command: 'build',
-				platforms: ['ios']
-			}
-		},
-		build_android: {
-			options: {
-				command: 'build',
-				platforms: ['android']
-			}
-		},
-		emulate_android: {
-			options: {
-				command: 'emulate',
-				platforms: ['android'],
-				args: ['--target','Nexus5']
-			}
-		}
-	},
-    run: {
+	run: {
       compileHandleBars: {
         options: {
           // Task-specific options go here.
