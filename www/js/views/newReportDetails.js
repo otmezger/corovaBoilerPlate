@@ -1,5 +1,5 @@
 var NewReportDetailsView = Backbone.View.extend({
-  viewTitle: 'New report details',
+  viewTitle: 'Detalles del reporte',
   /*
   tagName: "",
   className: "",
