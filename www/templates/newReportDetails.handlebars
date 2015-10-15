@@ -8,47 +8,16 @@
   <div class="topcoat-grid__row">
     <div class="topcoat-grid__column--10">
       <div class="reportDetailsForm">
-        <div class="reportDetailsForm-Label" >
+        <div class="reportDetailsForm-Text" >
           <div>
             <p>
               Asunto<br>
-              <input data-role="none" type="text" name="title" id="reportTitle" placeholder="Titulo del reporte" value="" required>
-      			</p>
+            </p>
           </div>
         </div>
-      </div>
-    </div> <!-- end of column -->
-  </div> <!-- end of row -->
-  <div class="topcoat-grid__row">
-    <div class="topcoat-grid__column--10">
-      <div class="reportDetailsForm">
-        <div class="reportDetailsForm-Label" >
+        <div class="reportDetailsForm-TextInput" >
           <div>
-            <p>
-              Descripción<br>
-              <textarea data-role="none" name="detail" id="reportDetail" placeholder="Detalles del problema. Por favor sea lo más explicito posible." required></textarea>
-      			</p>
-          </div>
-        </div>
-      </div>
-    </div> <!-- end of column -->
-  </div> <!-- end of row -->
-  <div class="topcoat-grid__row">
-    <div class="topcoat-grid__column--3">
-      <div class="reportDetailsForm">
-        <div class="reportDetailsForm-Label" >
-          <div>
-              <i class="icon ion-camera" ></i>
-          </div>
-        </div>
-      </div>
-    </div> <!-- end of column -->
-    <div class="topcoat-grid__column--9">
-      <div class="reportDetailsForm">
-        <div class="reportDetailsForm-Label" >
-          <div>
-            <input class="reportDetailsButton" id="galleryButton" type="button" value="Seleccionar foto" ><br>
-            <input class="reportDetailsButton" id="cameraButton" type="button" value="Tomar foto">
+            <input data-role="none" type="text" name="title" id="reportTitle" placeholder="Titulo del reporte" value="" required>
           </div>
         </div>
       </div>
@@ -57,12 +26,61 @@
   <div class="topcoat-grid__row">
     <div class="topcoat-grid__column--12">
       <div class="reportDetailsForm">
-        <div class="reportDetailsForm-Label" >
+        <div class="reportDetailsForm-Text" >
           <div>
             <p>
-              <input class="sendButton" id="sendReportButton" type="button" data-theme="a" value="Enviar reporte">
-      			</p>
+              Descripción
+          	</p>
           </div>
+        </div>
+        <div class="reportDetailsForm-TextInput" >
+          <div>
+            <p>
+              <textarea class="reportDetails" data-role="none" name="details" id="reportDetails" placeholder="Detalles del problema. Por favor sea lo más explicito posible." required></textarea>
+          	</p>
+          </div>
+        </div>
+      </div>
+    </div> <!-- end of column -->
+  </div> <!-- end of row -->
+  <div class="topcoat-grid__row">
+    <div class="topcoat-grid__column--3">
+      <div class="icon">
+        <div class="icon" >
+          <div>
+              <i class="icon ion-camera" ></i>
+          </div>
+        </div>
+      </div>
+    </div> <!-- end of column -->
+    <div class="topcoat-grid__column--9">
+      <div class="photoButtons">
+        <div class="photoButtons-Text" >
+          <div>
+            <p>
+              Seleccionar foto
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="photoButtons">
+        <div class="photoButtons-Text" >
+          <div>
+            <p>
+              Tomar foto
+            <p>
+          </div>
+        </div>
+      </div>
+    </div> <!-- end of column -->
+  </div> <!-- end of row -->
+  <div class="topcoat-grid__row">
+    <div class="topcoat-grid__column--12">
+      <div class="submitButton">
+        <div class="submitButton-Text" >
+          <div>
+              <p>Enviar reporte</p>
+      		</div>
         </div>
       </div>
     </div> <!-- end of column -->
