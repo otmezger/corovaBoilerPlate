@@ -14,7 +14,7 @@ var NewReportDetailsView = Backbone.View.extend({
   },
 
   render: function() {
-    this.$el.html(Handlebars.templates.newReportDetails());
+    this.$el.html(Handlebars.templates.newReportDetails(this));
     //$("header>div>ul.nav>li.active").removeClass("active"); // remove the active class
     //$("#whatever").addClass("active"); // add the active class
 

@@ -28,6 +28,12 @@ var NewReportCategoryView = Backbone.View.extend({
     var categoryID = $el.attr('categoryID');
     console.log(categoryID);
     this.reportModel.set('categoryModel',this.reportCategoryCollection.getReportCategoryByCategoryID(categoryID));
+    if (categoryID == 'Z-1'){
+      // not a "valid ID"
+        this.reportModel.attributes.categoryModel.attributes.validID = false;
+    }else{
+      this.reportModel.attributes.categoryModel.attributes.validID = true;
+    }
     //myApp.newReportDetailsViewer();
     Backbone.history.navigate('#/newReportDetails');
   },
