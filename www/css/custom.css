@@ -240,8 +240,10 @@ body.left-nav .topcoat-navigation-bar, body.left-nav .main-content {
   margin-bottom: 0px !important;
 }
 .separator{
-  border-top: 1px solid #A5A5A5;
   margin-top:5px;
+}
+hr.separator{
+  border-top: 1px solid #A5A5A5;
 }
 .photoContainer{
   width:100%;
@@ -275,3 +277,9 @@ body.left-nav .topcoat-navigation-bar, body.left-nav .main-content {
 /*
 ####################################   END  of   newReportCategoryView
 */
+
+
+.fixedHeightHelpBox{
+  overflow:auto;
+  height:300px;
+}
