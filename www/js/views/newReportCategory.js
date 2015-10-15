@@ -5,7 +5,7 @@ var NewReportCategoryView = Backbone.View.extend({
   className: "",
   */
   events: {
-    "click .cancelButton":          "cancelAction",
+    "click .cancelButton":          "cancelReportCreation",
     "click .reportCategoryButton":          "continueWithNextScreen",
   },
 
@@ -22,9 +22,6 @@ var NewReportCategoryView = Backbone.View.extend({
     $("#newReportCategory").addClass("is-active"); // add the active class
     this.delegateEvents();
     return this;
-  },
-  cancelAction: function(){
-    myApp.homeViewer();
   },
   continueWithNextScreen: function(e){
     var $el = $(e.currentTarget);
