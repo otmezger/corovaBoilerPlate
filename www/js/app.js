@@ -53,7 +53,7 @@ var AppRouter = Backbone.Router.extend({
     this.newReportCategoryView = new NewReportCategoryView();
     this.newReportCategoryView.reportCategoryCollection = this.reportCategoryCollection;
     this.newReportCategoryView.reportModel = this.reportModel;
-    // ----------------------------------------------------Report Model
+    // ----------------------------------------------------newReportDetailsView
     //                                                         |-----> Model
     //                                                         |-----> Collection
     //                                                         |-----> View
@@ -85,6 +85,8 @@ var AppRouter = Backbone.Router.extend({
   },*/
   renderViewScroller:function(theView){
     console.log('going to render a new view');
+    theView.undelegateEvents();
+    theView.undelegate();
     $('#app').html(theView.render().el);
     $('.topcoat-navigation-bar__title').html(theView.viewTitle);
     //$('#mini-nav').html(this.miniNavView.render().el);

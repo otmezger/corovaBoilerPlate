@@ -20,6 +20,7 @@ var NewReportCategoryView = Backbone.View.extend({
 
     this.unselectMenu();
     $("#newReportCategory").addClass("is-active"); // add the active class
+    this.delegateEvents();
     return this;
   },
   cancelAction: function(){
@@ -30,7 +31,8 @@ var NewReportCategoryView = Backbone.View.extend({
     var categoryID = $el.attr('categoryID');
     console.log(categoryID);
     this.reportModel.set('categoryModel',this.reportCategoryCollection.getReportCategoryByCategoryID(categoryID));
-    myApp.newReportDetailsViewer();
+    //myApp.newReportDetailsViewer();
+    Backbone.history.navigate('#/newReportDetails');
   },
 
 
