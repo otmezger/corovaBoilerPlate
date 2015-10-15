@@ -4,6 +4,7 @@ var ReportCategoryModel = Backbone.Model.extend({
     "categoryID":     "Z-1",
     "categoryIcon":    "ion-ios-help",
     "categoryName": "Otras",
+    'validID': true,
   }
 });
 
@@ -54,6 +55,8 @@ var ReportCategoryCollection = Backbone.Collection.extend({
     newCategoryModel.set('categoryID','Z-1');
     newCategoryModel.set('categoryIcon','ion-ios-help');
     newCategoryModel.set('categoryName','Otra');
+    newCategoryModel.set('validID',false);
+
     this.add(newCategoryModel);
   },
   getReportCategoryByCategoryID: function(categoryID){
