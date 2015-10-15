@@ -104,20 +104,55 @@ body.left-nav .topcoat-navigation-bar, body.left-nav .main-content {
 ####################################     newReportCategoryView
 */
 
-.topcoat-icon-button--large,
-.topcoat-icon-button--large--quiet {
+.category-grid>div.topcoat-grid__row{
+  /*margin-top:2rem;*/
+}
+.category-grid>div.topcoat-grid__row>div{
+  margin-top:2rem;
+}
+.reportCategoryButton{
   width: 10rem;
   height: 10rem;
   line-height: 10rem;
   border-radius: 0px;
   border-style: hidden;
 }
+.reportCategoryButton-Text{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:10rem;
+    height:10rem;
+    line-height:1.5rem;
+    color:white;
+}
 
-.topcoat-icon--largeOlmo{
-  width:10rem;
-  height:10rem;
-  left:-8px;
 
+.reportCategoryButton-Text>div>p{
+    text-align:center;
+    margin-bottom: 0px !important;
+}
+
+
+.cancelButton{
+  width: 100%;
+  height: 4rem;
+  line-height: 4rem;
+  border-radius: 0px;
+  border-style: hidden;
+  background-color: #F36228;
+}
+
+.cancelButton-Text{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:4rem;
+  color:white;
+}
+.cancelButton-Text>div>p{
+  text-align:center;
+  margin-bottom: 0px !important;
 }
 
 /*
