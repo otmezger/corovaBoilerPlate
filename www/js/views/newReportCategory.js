@@ -45,7 +45,7 @@ var NewReportCategoryView = Backbone.View.extend({
     var that = this;
     setTimeout(function(){
         that.setCategoryButtonWidth();
-    },100);
+    },10);
 
 
     var a = new $.Deferred();

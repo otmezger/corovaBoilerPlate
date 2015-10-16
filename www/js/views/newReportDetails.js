@@ -27,7 +27,7 @@ var NewReportDetailsView = Backbone.View.extend({
     setTimeout(function(){
       that.miniatureViews[0].render();
       that.adjustHeights();
-    },200);
+    },10);
     this.delegateEvents();
     $("#newReportDetails").addClass("is-active"); // add the active class
 

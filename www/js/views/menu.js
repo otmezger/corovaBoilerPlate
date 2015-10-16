@@ -24,6 +24,7 @@ var MenuView = Backbone.View.extend({
     this.$el.html(Handlebars.templates.menu());
     $('.side-nav').html(this.el.children[0]);
     //this.setControls();
+    this.delegateEvents();
     return this;
   },
   beforeRender: function(){},
@@ -67,15 +68,5 @@ var MenuView = Backbone.View.extend({
     cl.remove('left-nav');
     $('.main-container').removeClass('left-nav');
   },
-
-  sendEmail: function(){
-      cordova.plugins.email.open({
-          to:      'max@mustermann.de',
-          cc:      'erika@mustermann.de',
-          bcc:     ['john@doe.com', 'jane@doe.com'],
-          subject: 'Greetings',
-          body:    'How are you? Nice greetings from Leipzig'
-      });
-  }
 
 });

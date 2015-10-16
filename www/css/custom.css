@@ -1,4 +1,4 @@
-html, body {
+html, body, #app {
     margin:0;
     padding:0;
     height: 100%;
@@ -94,13 +94,7 @@ body.left-nav .topcoat-navigation-bar, body.left-nav .main-content {
     }
 }
 
-#mapCanvas{
-    height: 100vh;
-    width:100%;
-    color:white;
-    background-color:white;
 
-}
 .slide-menu-button{
   top: 0.3em;
 }
@@ -283,3 +277,19 @@ hr.separator{
   overflow:auto;
   height:300px;
 }
+
+
+/*
+####################################   MAP
+*/
+
+#app,
+#app>div,
+#mapCanvas {
+  height:100%;
+}
+
+
+/*
+####################################   END  of   newReportCategoryView
+*/
