@@ -150,6 +150,14 @@ body.left-nav .topcoat-navigation-bar, body.left-nav .main-content {
   border-style: hidden;
   background-color: #F36228;
 }
+.createButton{
+  width: 100%;
+  height: 4rem;
+  line-height: 4rem;
+  border-radius: 0px;
+  border-style: hidden;
+  background-color: #68BC36;
+}
 
 .cancelButton-Text{
   display:flex;
@@ -288,6 +296,29 @@ hr.separator{
 #mapCanvas {
   height:100%;
 }
+.reportViewInMap{
+  height: calc(100% - 200px) !important;
+  width: calc(100% - 60px);
+  z-index: 1;
+  position: absolute;
+  top: 200px;
+  left: 30px;
+  background-color: rgba(255, 255, 255, 0.92);
+  visibility: hidden; /* initially hidden*/
+}
+
+.createReportButtonContainer{
+  height: 4rem;
+  width: 100%;
+  z-index: 1;
+  position: absolute;
+  bottom: 80px;
+  left: 0px;
+}
+
+
+
+
 
 
 /*

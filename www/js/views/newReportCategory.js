@@ -25,24 +25,26 @@ var NewReportCategoryView = Backbone.View.extend({
     });
   },
   beforeRender: function(){
+    this.undelegateEvents();
     var a = new $.Deferred();
     return a.resolve();
   },
 
   render: function() {
     this.$el.html(Handlebars.templates.newReportCategory(this));
-    //$("header>div>ul.nav>li.active").removeClass("active"); // remove the active class
-    //$("#whatever").addClass("active"); // add the active class
-
     this.unselectMenu();
-    $("#newReportCategory").addClass("is-active"); // add the active class
-    this.delegateEvents();
+    //$("#newReportCategory").addClass("is-active"); // add the active class
+    $('.reportViewInMap').html(this.el);
+    $('.reportViewInMap').css({'visibility':'initial'});
+    $('.createReportButtonContainer').hide();
+
     //this.setCategoryButtonWidth();
     var a = new $.Deferred();
     return a.resolve();
   },
   afterRender: function(){
     var that = this;
+    this.delegateEvents();
     setTimeout(function(){
         that.setCategoryButtonWidth();
     },10);
@@ -68,7 +70,8 @@ var NewReportCategoryView = Backbone.View.extend({
     this.reportModel.set('categoryModel',this.reportCategoryCollection.getReportCategoryByCategoryID(categoryID));
 
     //myApp.newReportDetailsViewer();
-    Backbone.history.navigate('#/newReportDetails');
+    //Backbone.history.navigate('#/newReportDetails');
+    myApp.newReportDetailsView.render();
   },
 
 

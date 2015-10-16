@@ -1,5 +1,8 @@
 var MapView = Backbone.View.extend({
   viewTitle: '',
+  events: {
+    "click .createButton": "createNewReport",
+  },
   initialize: function() {
     //this.listenTo(this.model, "change", this.render);
     _.bindAll(this, 'beforeRender', 'render', 'afterRender');
@@ -16,11 +19,15 @@ var MapView = Backbone.View.extend({
     });
   },
   beforeRender: function(){
+    this.undelegateEvents();
     a = new $.Deferred()
     return a.resolve();
   },
   render: function() {
+
+
     console.log('rendering map');
+    $('.reportViewInMap').css({'visibility':'hidden'});
     return this.$el.html(Handlebars.templates.map());
 
     //this.makeMap();
@@ -30,11 +37,12 @@ var MapView = Backbone.View.extend({
   },
   afterRender:function(){
     console.log('on AFTER render for map');
+    this.delegateEvents();
     var that = this;
     setTimeout(function () {
       //that.makeMapGoogle();
-      that.makeMapMapBox_deprecated();
-    }, 1000);
+      that.makeMapMapBox();
+    }, 10);
     //this.makeMap();
     a = new $.Deferred()
     return a.resolve();
@@ -49,7 +57,7 @@ var MapView = Backbone.View.extend({
     // Wait until the map is ready status.
     //map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);
   },
-  makeMapMapBox_deprecated: function(){
+  makeMapMapBox: function(){
     this.map = L.map('mapCanvas').setView([9.9136, -84.0389], 14);
 
 
@@ -70,7 +78,11 @@ var MapView = Backbone.View.extend({
         .bindPopup("You are within " + radius + " meters from this point").openPopup();
 
     L.circle(e.latlng, radius).addTo(map);
-  }
+  },
+  createNewReport:function(){
+    console.log('going to createNewReport');
+    myApp.newReportCategoryView.render();
+  },
 
 
 

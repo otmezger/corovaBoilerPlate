@@ -12,9 +12,14 @@ var NewReportDetailsView = Backbone.View.extend({
   },
 
   render: function() {
+    this.undelegateEvents();
     this.$el.html(Handlebars.templates.newReportDetails(this));
     //$("header>div>ul.nav>li.active").removeClass("active"); // remove the active class
     //$("#whatever").addClass("active"); // add the active class
+
+    $('.reportViewInMap').html(this.el);
+    $('.reportViewInMap').css({'visibility':'initial'});
+    $('.createReportButtonContainer').hide();
 
     this.unselectMenu();
     var that = this;
