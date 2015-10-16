@@ -1,6 +1,5 @@
 var AppRouter = Backbone.Router.extend({
   routes: {
-    "home": "homeViewer",
     "help": "helpViewer",
     "newReportMap": "newReportMapViewer",
     "newReportCategory": "newReportCategoryViewer",
@@ -22,13 +21,6 @@ var AppRouter = Backbone.Router.extend({
     this.menuView.render();
         // the menu need to be renderd at once
 
-    // ----------------------------------------------------HOME
-    //                                                         |-----> Model
-    //                                                         |-----> Collection
-    // this.homeCollection = new HomeCollection();
-    // this.homeCollection.fetch();
-    //                                                         |-----> View
-    this.homeView = new HomeView();
     // ----------------------------------------------------Help
     //                                                         |-----> Model
     //                                                         |-----> Collection
@@ -95,10 +87,6 @@ var AppRouter = Backbone.Router.extend({
     this.menuView.closeMenu();
   },
   // ------------------------------------------------------ VIEWERS
-  homeViewer: function () {
-    console.log('going into the home view');
-    this.renderViewScroller(this.homeView);
-  },
   helpViewer: function () {
     this.renderViewScroller(this.helpView);
   },
@@ -126,7 +114,7 @@ function initializeMyApp(){
   myApp = new AppRouter();
   Backbone.history.start();
   myApp.menuView.setControls();
-  myApp.renderViewScroller(myApp.homeView); // default view.
+  myApp.mapViewer(); // default view.
 };
 document.addEventListener("deviceready", initializeMyApp, false);
 //var app = new AppRouter();

@@ -4,7 +4,7 @@ Backbone.View.prototype.unselectMenu =  function(){
 
 Backbone.View.prototype.cancelReportCreation = function(){
   myApp.reportModel = new ReportModel();
-  Backbone.history.navigate('#/home');
+  Backbone.history.navigate('#/map');
 };
 
 

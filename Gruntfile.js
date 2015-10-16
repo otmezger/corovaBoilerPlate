@@ -15,7 +15,6 @@ module.exports = function(grunt) {
         },
         cmd: HANDLEBARS_EXEC,
         args: [
-          'home.handlebars',
           'menu.handlebars',
     		  'help.handlebars',
     		  'newReportMap.handlebars',

@@ -1,13 +1,5 @@
 var MapView = Backbone.View.extend({
-  /*
-  tagName: "",
-  className: "",
-  events: {
-    "click .icon":          "open",
-    "click .button.edit":   "openEditDialog",
-    "click .button.delete": "destroy"
-  },
-  */
+  viewTitle: '',
   initialize: function() {
     //this.listenTo(this.model, "change", this.render);
     _.bindAll(this, 'beforeRender', 'render', 'afterRender');
@@ -61,7 +53,7 @@ var MapView = Backbone.View.extend({
     this.map = L.map('mapCanvas').setView([9.9136, -84.0389], 14);
 
 
-    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}@2x.png?access_token={accessToken}', {
       //id: 'otmezger.7916b706',
       id: 'mapbox.pirates',
       //id: 'mapbox.light',
