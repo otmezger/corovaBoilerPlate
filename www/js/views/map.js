@@ -58,7 +58,10 @@ var MapView = Backbone.View.extend({
     //map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);
   },
   makeMapMapBox: function(){
-    this.map = L.map('mapCanvas').setView([9.9136, -84.0389], 14);
+    this.map = L.map('mapCanvas',
+    {
+      zoomControl:false
+    }).setView([9.9136, -84.0389], 14);
 
 
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}@2x.png?access_token={accessToken}', {
