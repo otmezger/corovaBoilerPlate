@@ -137,6 +137,7 @@ body.left-nav .topcoat-navigation-bar, body.left-nav .main-content {
     margin-bottom: 0px !important;
     padding-left:1rem;
     padding-right:1rem;
+    font-size: 90%;
 }
 .reportCategoryButton-Text>div>p>i{
     font-size: 350%;
