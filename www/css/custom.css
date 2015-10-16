@@ -320,11 +320,17 @@ hr.separator{
   left: 0px;
 }
 
+/*
+####################################   END  of   newReportCategoryView
+*/
 
-
-
-
-
+/*
+####################################   MAP
+*/
+.helpGaELogo{
+  width: 100%;
+  display: block;
+}
 /*
 ####################################   END  of   newReportCategoryView
 */
