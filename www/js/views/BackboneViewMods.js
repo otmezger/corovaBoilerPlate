@@ -20,3 +20,11 @@ Backbone.View.prototype.sendEmail =  function(){
       body:    'How are you? Nice greetings from Leipzig'
   });
 };
+
+Backbone.View.prototype.hideMenu =  function(){
+  $('.slide-menu-button').css("display", "none");
+};
+
+Backbone.View.prototype.showMenu =  function(){
+  $('.slide-menu-button').css("display", "inherit");
+};
