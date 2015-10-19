@@ -4,7 +4,7 @@ Handlebars.registerHelper('getMiniaturePictureClass', function(pictureModel) {
   if (pictureModel) {
     out = 'tmpPhoto';
   }else{
-    out = 'newPhoto'
+    out = 'newPhoto';
   }
   return out;
 });

@@ -34,7 +34,19 @@ var DeviceModel = Backbone.Model.extend({
           break;
       }
     }else{
+      if (this.attributes.OS == 'Android'){
+        switch (this.attributes.height_px){
+          case 2560:
+          case 2368:
+            return 'Nexus 6';
+            break;
+          case 1920:
+            return 'Nexus 5';
+            break;
+        }// end of switch height_px
+      }
       // not iOS
     }
-  }
+  },
+  
 });

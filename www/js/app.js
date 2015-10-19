@@ -39,7 +39,7 @@ var AppRouter = Backbone.Router.extend({
     // ----------------------------------------------------NewReportCategory
     //                                                         |-----> Model
     //                                                         |-----> Collection
-    this.reportCategoryCollection = new ReportCategoryCollection;
+    this.reportCategoryCollection = new ReportCategoryCollection();
     this.reportCategoryCollection.populateManual();
     //                                                         |-----> View
     this.newReportCategoryView = new NewReportCategoryView();
@@ -121,7 +121,7 @@ function initializeMyApp(){
   Backbone.history.start();
   myApp.menuView.setControls();
   myApp.mapViewer(); // default view.
-};
+}
 document.addEventListener("deviceready", initializeMyApp, false);
 //var app = new AppRouter();
 

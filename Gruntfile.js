@@ -72,7 +72,10 @@ module.exports = function(grunt) {
         wait:true,
         args:['run', 'browser']
       },
-    },
+    },// end of run
+    jshint: {
+      all: ['Gruntfile.js', 'www/js/*.js']
+    }
   });
 
   // Load the plugin that provides the "uglify" task.
@@ -83,6 +86,7 @@ module.exports = function(grunt) {
   //grunt.loadNpmTasks('grunt-sftp-deploy');
   //grunt.loadNpmTasks('grunt-inject');
   grunt.loadNpmTasks('grunt-run');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
   //grunt.loadNpmTasks('grunt-cordovacli');
   //grunt.loadNpmTasks('grunt-contrib-clean');
 
@@ -91,6 +95,7 @@ module.exports = function(grunt) {
     'run:compileHandleBars'
   ]);
   grunt.registerTask('ios',[
+    'jshint:all',
     'run:compileHandleBars',
     'run:prepareIOS',
     'run:runIOS'

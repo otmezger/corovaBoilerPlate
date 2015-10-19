@@ -41,12 +41,14 @@ Backbone.View.prototype.setReportViewInMapDeviceSpecSizes =  function(){
       $('.newPhoto>p>i').css({'font-size':'200%'});
       break;
     case 'iPhone 5x':
+    case 'Nexus 5':
       $('.reportDetailContainer').css({'height': 53+'vh'});
 
       // for the reportDetailsScreen
       $('.newPhoto>p>i').css({'font-size':'200%'});
       break;
     case 'iPhone 6':
+    case 'Nexus 6':
         $('.reportDetailContainer').css({'height': 55+'vh'});
         $('.reportCategoryButton-Text>div>p').css({'margin-top':0+'px'});
         $('.reportViewInMap').css({'height': 'calc(100% - 150px)','top':'150px'});
