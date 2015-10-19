@@ -30,6 +30,8 @@ var AppRouter = Backbone.Router.extend({
     //                                                         |-----> Model
     this.reportModel = new ReportModel();
     //                                                         |-----> Collection
+    this.reportCollection = new ReportCollection();
+    this.reportCollection.populateManual();
     //                                                         |-----> View
     // ----------------------------------------------------NewReportMap
     //                                                         |-----> Model

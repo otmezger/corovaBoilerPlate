@@ -72,14 +72,14 @@ var MapView = Backbone.View.extend({
     {
       zoomControl:false
     }).setView([9.9136, -84.0389], 14);
-    map = this.map;
+    map = this.map; // somehow the map needs to be global! crazy...
 
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}@2x.png?access_token={accessToken}', {
       //id: 'otmezger.7916b706',
       id: 'mapbox.pirates',
       //id: 'mapbox.light',
       accessToken: 'pk.eyJ1Ijoib3RtZXpnZXIiLCJhIjoiYmE2OWZmNzBjZTVkZTQ3ODczMjE5N2I1NmZkMmYyNDkifQ.IydOg1-YXjs817nryXUP3Q',
-      maxZoom: 18
+      zoom: 17
     }).addTo(this.map);
     //this.map.locate({setView: true, maxZoom: 16});
     //this.map.on('locationfound', onLocationFound);
@@ -125,6 +125,9 @@ var MapView = Backbone.View.extend({
     var radius = position.coords.accuracy / 2;
 
     position.coords.latlng = L.latLng(position.coords.latitude, position.coords.longitude);// https://www.mapbox.com/mapbox.js/api/v2.2.2/l-latlng/
+
+
+    //let's draw the pin on the map
     if (this.currentMarkerPin){
       this.map.removeLayer(this.currentMarkerPin);
     }
@@ -132,13 +135,15 @@ var MapView = Backbone.View.extend({
     this.map.addLayer(this.currentMarkerPin);
     this.currentMarkerPin.bindPopup("You are within " + radius + " meters from this point").openPopup();
 
-
+    // now let's draw a circle with the accuracy
     if (this.currentMarkerCircle){
       this.map.removeLayer(this.currentMarkerCircle);
     }
     this.currentMarkerCircle = new L.circle(position.coords.latlng, radius);
     this.map.addLayer(this.currentMarkerCircle);
 
+    // now let's center the map.
+    this.map.panTo(position.coords.latlng);
 
   },
   onLocationError: function(error){
