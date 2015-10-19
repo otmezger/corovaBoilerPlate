@@ -29,14 +29,14 @@ var MapView = Backbone.View.extend({
     return a.resolve();
   },
   render: function() {
-
-
     console.log('rendering map');
     $('.reportViewInMap').css({'visibility':'hidden'});
     return this.$el.html(Handlebars.templates.map());
 
     //this.makeMap();
     //return this;
+
+
     a = new $.Deferred()
     return a.resolve();
   },
@@ -48,6 +48,10 @@ var MapView = Backbone.View.extend({
       //that.makeMapGoogle();
       that.makeMapMapBox();
     }, 10);
+    setTimeout(function () {
+      that.initializeGPS();
+    }, 50);
+
     //this.makeMap();
     a = new $.Deferred()
     return a.resolve();
