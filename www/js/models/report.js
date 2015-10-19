@@ -14,7 +14,7 @@ var ReportCollection = Backbone.Collection.extend({
       newReportModel.set('category',categoryModel);
 
       var lat_0 = 9.911552;
-      var lng_0 = -8403583;
+      var lng_0 = -84.03583;
 
       var r = 1000; // radius in meters
       var r_degree = r / 111300;

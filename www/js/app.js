@@ -26,27 +26,27 @@ var AppRouter = Backbone.Router.extend({
     //                                                         |-----> Collection
     //                                                         |-----> View
     this.helpView = new HelpView();
-    // ----------------------------------------------------Report Model
+    // ----------------------------------------------------NewReportCategory & Report Model
     //                                                         |-----> Model
     this.reportModel = new ReportModel();
     //                                                         |-----> Collection
+    this.reportCategoryCollection = new ReportCategoryCollection();
+    this.reportCategoryCollection.populateManual();
     this.reportCollection = new ReportCollection();
-    this.reportCollection.populateManual();
+    var that = this;
+    setTimeout(function(){
+      that.reportCollection.populateManual();
+    },500);
     //                                                         |-----> View
+    this.newReportCategoryView = new NewReportCategoryView();
+    this.newReportCategoryView.reportCategoryCollection = this.reportCategoryCollection;
+    this.newReportCategoryView.reportModel = this.reportModel;
     // ----------------------------------------------------NewReportMap
     //                                                         |-----> Model
     //                                                         |-----> Collection
     //                                                         |-----> View
     this.newReportMapView = new NewReportMapView();
-    // ----------------------------------------------------NewReportCategory
-    //                                                         |-----> Model
-    //                                                         |-----> Collection
-    this.reportCategoryCollection = new ReportCategoryCollection();
-    this.reportCategoryCollection.populateManual();
-    //                                                         |-----> View
-    this.newReportCategoryView = new NewReportCategoryView();
-    this.newReportCategoryView.reportCategoryCollection = this.reportCategoryCollection;
-    this.newReportCategoryView.reportModel = this.reportModel;
+
     // ----------------------------------------------------newReportDetailsView
     //                                                         |-----> Model
     //                                                         |-----> Collection
@@ -69,6 +69,7 @@ var AppRouter = Backbone.Router.extend({
     //                                                         |-----> Collection
     //                                                         |-----> View
     this.mapView = new MapView();
+    this.mapView.reportCollection = this.reportCollection;
 
   }, // end of initlialize
   // ------------------------------------------------------

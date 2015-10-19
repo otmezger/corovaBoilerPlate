@@ -153,6 +153,38 @@ var MapView = Backbone.View.extend({
   updateGPSMarker:function(){
     // this function draws the GPS mark on the map
 
+  },
+  drawReports:function(){
+    //first, let's delete all map points available.
+    var that = this;
+    if (this.reportPinLayers){
+      _.each(this.reportPinLayers, function(thisReportPinLayer){
+        that.map.removeLayer(thisReportPinLayer);
+      }); // end removeing all pin layers.
+    }else{
+      this.reportPinLayers = [];
+    }
+
+    _.each(this.reportCollection.models,function(thisReportModel){
+      var thisReportLatLng = L.latLng(thisReportModel.attributes.latitude,thisReportModel.attributes.longitude);
+      var thisIcon = L.divIcon({
+        className: 'my-div-icon ' + thisReportModel.cid,
+        html: '<div class="pin"><i id="'+ thisReportModel.cid + '" class="ion ' + thisReportModel.attributes.category.attributes.categoryIcon + '"></i></div>'
+      });
+
+
+      var currentMarkerPin = new L.marker(thisReportLatLng,{'icon':thisIcon});
+      that.map.addLayer(currentMarkerPin);
+
+      $('.leaflet-marker-icon' + '.' + thisReportModel.cid).css({'background':thisReportModel.attributes.category.attributes.categoryColor});
+
+
+      //currentMarkerPin.bindPopup('<i id="'+ thisReportModel.cid + '" class="ion ' + thisReportModel.attributes.category.attributes.categoryIcon + '"></i>').openPopup();
+
+
+
+      that.reportPinLayers.push(currentMarkerPin);
+    });// end of each reportsCollection.models
   }
 
 
