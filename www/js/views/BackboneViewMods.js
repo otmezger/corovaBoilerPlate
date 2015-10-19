@@ -13,11 +13,11 @@ Backbone.View.prototype.cancelReportCreation = function(){
 
 Backbone.View.prototype.sendEmail =  function(){
   cordova.plugins.email.open({
-      to:      'max@mustermann.de',
-      cc:      'erika@mustermann.de',
-      bcc:     ['john@doe.com', 'jane@doe.com'],
-      subject: 'Greetings',
-      body:    'How are you? Nice greetings from Leipzig'
+      to:      'avisame@curridabat.go.cr',
+      //cc:      'erika@mustermann.de',
+      //bcc:     ['john@doe.com', 'jane@doe.com'],
+      subject: 'Contacto de Yo Alcalde',
+      //body:    ''
   });
 };
 
@@ -27,4 +27,41 @@ Backbone.View.prototype.hideMenu =  function(){
 
 Backbone.View.prototype.showMenu =  function(){
   $('.slide-menu-button').css("display", "inherit");
+};
+
+Backbone.View.prototype.setReportViewInMapDeviceSpecSizes =  function(){
+  switch (myApp.deviceModel.attributes.phoneModel){
+    case 'iPhone 4x':
+      $('.reportDetailContainer').css({'height': 55+'vh'});
+      $('.reportViewInMap').css({
+        'height': 'calc(100% - 100px)',
+        'top':'100px'
+      });
+      // for the reportDetailsScreen
+      $('.newPhoto>p>i').css({'font-size':'200%'});
+      break;
+    case 'iPhone 5x':
+      $('.reportDetailContainer').css({'height': 53+'vh'});
+
+      // for the reportDetailsScreen
+      $('.newPhoto>p>i').css({'font-size':'200%'});
+      break;
+    case 'iPhone 6':
+        $('.reportDetailContainer').css({'height': 55+'vh'});
+        $('.reportCategoryButton-Text>div>p').css({'margin-top':0+'px'});
+        $('.reportViewInMap').css({'height': 'calc(100% - 150px)','top':'150px'});
+
+        // for the reportDetailsScreen
+        $('.newPhoto>p>i').css({'font-size':'300%'});
+
+        break;
+    case 'iPhone 6 Plus':
+      $('.reportDetailContainer').css({'height': 55+'vh'});
+      $('.reportCategoryButton-Text>div>p').css({'margin-top':0+'px'});
+      $('.reportViewInMap').css({'height': 'calc(100% - 200px)','top':'200px'});
+      // for the reportDetailsScreen
+      $('.newPhoto>p>i').css({'font-size':'320%'});
+      break;
+
+  }
 };

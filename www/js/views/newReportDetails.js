@@ -44,6 +44,7 @@ var NewReportDetailsView = Backbone.View.extend({
     var width = $('.photoContainer').width();
     $('.photoContainer').css({'height':width+'px'});
     $('.photoContainer>p').css({'line-height':width+'px'});
+    this.setReportViewInMapDeviceSpecSizes();
   },
   uploadPicture:function(){
     this.miniatureViews.push(new PictureMiniatureView());

@@ -25,8 +25,8 @@ var DeviceModel = Backbone.Model.extend({
         case 667:
           return 'iPhone 6';
           break;
-        case 737:
-          return 'iPhone 6s'
+        case 736:
+          return 'iPhone 6 Plus'
           break;
         default:
           // put here some analytics event recording this exception.

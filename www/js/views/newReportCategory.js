@@ -67,12 +67,7 @@ var NewReportCategoryView = Backbone.View.extend({
       $('.reportCategoryButton-Text>div>p>i').css({'font-size': '200%'});
     }
     // should be like htis:
-
-    switch (myApp.deviceModel.attributes.phoneModel){
-      case 'iPhone 6':
-        $('.reportDetailContainer').css({'height': 55+'vh'});
-        break;
-    }
+    this.setReportViewInMapDeviceSpecSizes();
   },
   continueWithNextScreen: function(e){
     var $el = $(e.currentTarget);

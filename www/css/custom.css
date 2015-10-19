@@ -140,6 +140,8 @@ body.left-nav .topcoat-navigation-bar, body.left-nav .main-content {
     text-align:center;
     margin-top: -0.9em;
     font-size: 90%;
+    padding-right:3px;
+    padding-left:3px;
 }
 .reportCategoryButton-Text>div>p>i{
     font-size: 350%;
@@ -311,11 +313,11 @@ hr.separator{
   height:100%;
 }
 .reportViewInMap{
-  height: calc(100% - 150px) !important;
+  height: calc(100% - 120px);
   width: calc(100% - 40px);
   z-index: 1;
   position: absolute;
-  top: 150px;
+  top: 120px;
   left: 20px;
   background-color: rgba(255, 255, 255, 0.92);
   visibility: hidden; /* initially hidden*/
