@@ -302,12 +302,12 @@ hr.separator{
   height:100%;
 }
 .reportViewInMap{
-  height: calc(100% - 200px) !important;
-  width: calc(100% - 60px);
+  height: calc(100% - 150px) !important;
+  width: calc(100% - 40px);
   z-index: 1;
   position: absolute;
-  top: 200px;
-  left: 30px;
+  top: 150px;
+  left: 20px;
   background-color: rgba(255, 255, 255, 0.92);
   visibility: hidden; /* initially hidden*/
 }
@@ -317,7 +317,7 @@ hr.separator{
   width: 100%;
   z-index: 1;
   position: absolute;
-  bottom: 80px;
+  bottom: 2rem;
   left: 0px;
 }
 
