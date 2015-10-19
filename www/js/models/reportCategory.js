@@ -54,7 +54,7 @@ var ReportCategoryCollection = Backbone.Collection.extend({
     newCategoryModel.set('categoryColor','#C60000');
     newCategoryModel.set('categoryID','J-0');
     newCategoryModel.set('categoryIcon','ion-heart');
-    newCategoryModel.set('categoryName','Evento Positivo');
+    newCategoryModel.set('categoryName','Buen Ejemplo');
     this.add(newCategoryModel);
 
 
