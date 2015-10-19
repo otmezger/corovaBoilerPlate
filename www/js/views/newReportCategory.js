@@ -36,6 +36,7 @@ var NewReportCategoryView = Backbone.View.extend({
     //$("#newReportCategory").addClass("is-active"); // add the active class
     $('.reportViewInMap').html(this.el);
     $('.reportViewInMap').css({'visibility':'initial'});
+    $('.reportViewInMap').css("display","block");
     $('.createReportButtonContainer').hide();
 
     //this.setCategoryButtonWidth();

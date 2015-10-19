@@ -138,9 +138,7 @@ body.left-nav .topcoat-navigation-bar, body.left-nav .main-content {
 
 .reportCategoryButton-Text>div>p{
     text-align:center;
-    margin-bottom: 0px !important;
-    padding-left:1rem;
-    padding-right:1rem;
+    margin-top: -0.9em;
     font-size: 90%;
 }
 .reportCategoryButton-Text>div>p>i{
@@ -176,6 +174,11 @@ body.left-nav .topcoat-navigation-bar, body.left-nav .main-content {
   margin-bottom: 0px !important;
 }
 
+#app > div > div.reportViewInMap > div > div.topcoat-grid.category-grid > div:nth-child(2){
+  overflow: auto;
+  height: 45vh;
+}
+
 /*
 ####################################   END  of   newReportCategoryView
 */
@@ -206,6 +209,11 @@ body.left-nav .topcoat-navigation-bar, body.left-nav .main-content {
 
 .reportDetailsForm{
   margin-top: 0.8em;
+}
+
+.photosRow{
+  height: 25vh;
+  overflow: auto;
 }
 
 .photoButtons{
