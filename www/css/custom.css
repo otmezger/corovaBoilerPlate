@@ -174,7 +174,8 @@ body.left-nav .topcoat-navigation-bar, body.left-nav .main-content {
   margin-bottom: 0px !important;
 }
 
-#app > div > div.reportViewInMap > div > div.topcoat-grid.category-grid > div:nth-child(2){
+/*#app > div > div.reportViewInMap > div > div.topcoat-grid.category-grid > div:nth-child(2)*/
+.reportDetailContainer{
   overflow: auto;
   height: 45vh;
 }

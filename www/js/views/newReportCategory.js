@@ -47,21 +47,31 @@ var NewReportCategoryView = Backbone.View.extend({
     var that = this;
     this.delegateEvents();
     setTimeout(function(){
-        that.setCategoryButtonWidth();
+        that.setDeviceSpecificSizes();
     },10);
 
 
     var a = new $.Deferred();
     return a.resolve();
   },
-  setCategoryButtonWidth: function(){
-    console.log('running setCategoryButtonWidth');
+  setDeviceSpecificSizes: function(){
+    console.log('running setDeviceSpecificSizes');
     var width = $('.reportCategoryButton').width();
 
     $('.reportCategoryButton').css({'height':width+'px'});
+
+
+    // this here is deprecated!
     if (width <= 90){
       // screen is small, we need to adapt the size of the text
       $('.reportCategoryButton-Text>div>p>i').css({'font-size': '200%'});
+    }
+    // should be like htis:
+
+    switch (myApp.deviceModel.attributes.phoneModel){
+      case 'iPhone 6':
+        $('.reportDetailContainer').css({'height': 55+'vh'});
+        break;
     }
   },
   continueWithNextScreen: function(e){

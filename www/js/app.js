@@ -51,6 +51,12 @@ var AppRouter = Backbone.Router.extend({
     //                                                         |-----> View
     this.newReportDetailsView = new NewReportDetailsView();
     this.newReportDetailsView.reportModel = this.reportModel;
+    // ----------------------------------------------------deviceModel
+    //                                                         |-----> Model
+    this.deviceModel = new DeviceModel();
+    //                                                         |-----> Collection
+    //                                                         |-----> View
+
     // ----------------------------------------------------WHATEVER
     //                                                         |-----> Model
     //                                                         |-----> Collection
