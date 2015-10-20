@@ -7,7 +7,8 @@ Backbone.View.prototype.cancelReportCreation = function(){
   //Backbone.history.navigate('#/map');
   $('.reportViewInMap').hide();
   $('.createReportButtonContainer').show();
-
+  Backbone.View.prototype.normalMap();
+  Backbone.View.prototype.showMenu();
 };
 
 
@@ -66,4 +67,12 @@ Backbone.View.prototype.setReportViewInMapDeviceSpecSizes =  function(){
       break;
 
   }
+};
+
+Backbone.View.prototype.upsideMap = function(){
+  $('#mapCanvas').css({'top':'-36%'});
+};
+
+Backbone.View.prototype.normalMap = function(){
+  $('#mapCanvas').css('top','0%');
 };

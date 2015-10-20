@@ -94,6 +94,8 @@ var MapView = Backbone.View.extend({
   },*/
   createNewReport:function(){
     console.log('going to createNewReport');
+    Backbone.View.prototype.upsideMap();
+    Backbone.View.prototype.hideMenu();
     myApp.newReportCategoryView.render();
   },
 
